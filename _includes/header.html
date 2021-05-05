@@ -1,15 +1,10 @@
-{%- comment -%}
-  Include vars:
-  scrolly_nav
-{%- endcomment -%}
-
-<!-- Header -->
-<div id="header">
-  <div class="top">
-    {%- include logo.html -%}
-    {%- include nav.html section_items=include.scrolly_nav -%}
+<header>
+  <div class="logo">
+    <a href="{{ site.github.url }}/">{{ site.title }}</a>
   </div>
-  <div class="bottom">
-    {%- include social_icons.html -%}
-  </div>
-</div>
+  <nav>
+    {% for item in site.data.settings.menu %}
+      <a href="{{ site.github.url }}/{{ item.url }}">{{ item.name }}</a>
+    {% endfor %}
+  </nav>
+</header>
